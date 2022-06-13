@@ -1,0 +1,45 @@
+body{
+    background-color: #f0f0f0;
+}
+.tabs ul{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    list-style: none;
+    padding: 0;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.342);
+}
+.tabs ul li{
+    padding: 14px;
+}
+.tabs ul li.active{
+    border-bottom: 2px solid #744bfa;
+}
+.tabs ul li.active a{
+    color: #744bfa;
+}
+.tabs ul li a{
+    color: #9aa0bb;
+    text-decoration: none;
+}
+.card-header{
+    color: rgb(116, 116, 116);
+    background-color: #fcfcfc;
+    cursor: pointer;
+}
+.setting_icon{
+    border-radius: 50%;
+    border: 1px dashed black;
+    height: 36px;
+    width: 36px;
+}
+.details_attribute{
+    text-transform: capitalize;
+}
+.details_value{
+    margin-top: 3px;
+    color: #87819c;
+}
+.card{
+    border: none;
+}
