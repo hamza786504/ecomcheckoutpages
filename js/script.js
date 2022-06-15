@@ -112,7 +112,7 @@ const registerForm = document.getElementById("register_form");
     
     
     
-    const login_form = () => {
+    const login_form = async () => {
         hide_forgetpwd_form();
         if(email.value === ""){
             email.parentNode.classList.add("error");
@@ -128,6 +128,18 @@ const registerForm = document.getElementById("register_form");
             setTimeout(() => {
                 loginForm.classList.remove("animate__shakeX");
             }, 1000);
+        }else{
+            const result = await fetch("https://jsonplaceholder.typicode.com/users",{
+                method : "POST",
+                body : JSON.stringify({email : email.value , password : password.value}),
+                headers : {
+                    "Content-Type" : "application/json",
+                }
+            });
+            const res = await result.json();
+            if(res){
+                console.log(res);
+            }
         }
     }
     
@@ -146,7 +158,7 @@ const registerForm = document.getElementById("register_form");
         isRegisterError = false;
     }
 
-    const reset_password_form = () => {
+    const reset_password_form = async () => {
         if(reset_pass_email.value === ""){
             reset_pass_email.parentNode.classList.add("error");
             isResetpasswordEmailError = true;
@@ -160,10 +172,22 @@ const registerForm = document.getElementById("register_form");
       setTimeout(() => {
          resetPasswordForm.classList.remove("animate__shakeX");
       }, 1000);
+     }else{
+            const result = await fetch("https://jsonplaceholder.typicode.com/users",{
+                method : "POST",
+                body : JSON.stringify({email : reset_pass_email.value }),
+                headers : {
+                    "Content-Type" : "application/json",
+                }
+            });
+            const res = await result.json();
+            if(res){
+                console.log(res);
+            }
      }
     }
     
-    const register_form = () => {
+    const register_form = async () => {
         hide_forgetpwd_form();
         if(register_email.value === ""){
             register_email.parentNode.classList.add("error");
@@ -182,6 +206,18 @@ const registerForm = document.getElementById("register_form");
       setTimeout(() => {
          registerForm.classList.remove("animate__shakeX");
       }, 1000);
+     }else{
+        const result = await fetch("https://jsonplaceholder.typicode.com/users",{
+                method : "POST",
+                body : JSON.stringify({email : register_email.value , username : register_name.value , password : register_password.value }),
+                headers : {
+                    "Content-Type" : "application/json",
+                }
+            });
+            const res = await result.json();
+            if(res){
+                console.log(res);
+            }
      }
     }
 

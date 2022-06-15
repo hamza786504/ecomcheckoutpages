@@ -35,101 +35,106 @@
                 </div>
             </div>
         </div>
-        <div class="row align-items-stretch">
-            <div class="col-md-6 mb-4">
-                <div class="card mt-0 h-100">
-                    <h6 class="card-header d-flex align-items-center justify-content-between py-3">
-                        Contact info
-                    </h6>
-                    <div class="card-body">
-                        <label for="email" class="mt-2  fw-normal" style="font-size: 14px;">Name</label>
-                        <div class="input-field">
-                            <input type="text" name="name" id="name" />
-                        </div>
-                        <label for="email" class="mt-2  fw-normal" style="font-size: 14px;">Email</label>
-                        <div class="input-field">
-                            <input type="text" name="email" id="email" />
-                        </div>
-                        <label for="email" class="mt-2  fw-normal" style="font-size: 14px;">Phone</label>
-                        <div class="input-field">
-                            <input type="number" name="phone" id="phone" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 mb-4">
-                <div class="card mt-3 h-100 mt-md-0">
-                    <h6 class="card-header d-flex align-items-center justify-content-between py-4">
-                        Billing address
-                    </h6>
-                    <div class="card-body">
-                        <label for="email" class="mt-2  fw-normal" style="font-size: 14px;">Number</label>
-                        <div class="input-field">
-                            <input type="text" name="number" id="number" />
-                        </div>
-                        <label for="City" class="mt-2  fw-normal" style="font-size: 14px;">City</label>
-                        <div class="input-field">
-                            <input type="text" name="city" id="city" />
-                        </div>
-                        <label for="email" class="mt-2  fw-normal" style="font-size: 14px;">State</label>
-                        <div class="input-field">
-                            <input type="text" name="state" id="state" />
-                        </div>
-                        <br />
-                        <label for="street" class="mt-2  fw-normal" style="font-size: 14px;">Street</label>
-                        <div class="input-field">
-                            <input type="text" name="street" id="street" />
-                        </div>
-                        <label for="City" class="mt-2  fw-normal" style="font-size: 14px;">Postal Code</label>
-                        <div class="input-field">
-                            <input type="text" name="postal_code" id="postal_code" />
-                        </div>
-                        <label for="email" class="mt-2  fw-normal" style="font-size: 14px;">Country</label>
-                        <div class="input-field">
-                            <input type="text" name="country" id="country" />
+        <form>
+            <div class="row align-items-stretch">
+                <div class="col-md-6 mb-4">
+                    <div class="card mt-0 h-100 animate__animated" id="fill_contact_info">
+                        <h6 class="card-header d-flex align-items-center justify-content-between py-3">
+                            Contact info
+                        </h6>
+                        <div class="card-body">
+                            <label for="email" class="mt-2  fw-normal" style="font-size: 14px;">Name</label>
+                            <div class="input-field">
+                                <input type="text" name="name" id="name" onkeyup="validate_field(this)"/>
+                            </div>
+                            <label for="email" class="mt-2  fw-normal" style="font-size: 14px;">Email</label>
+                            <div class="input-field">
+                                <input type="text" name="email" id="email" onkeyup="validate_field(this)"/>
+                            </div>
+                            <label for="email" class="mt-2  fw-normal" style="font-size: 14px;">Phone</label>
+                            <div class="input-field">
+                                <input type="number" name="phone_no" id="phone_no" onkeyup="validate_field(this)"/>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6 mb-4">
-                <div class="card mt-4 h-100 mt-md-0">
-                    <h6 class="card-header d-flex align-items-center justify-content-between py-4">
-                        Shipping Address
-                        <label class="switch">
-                            <input type="checkbox" id="toggle_shipping_address">
-                            <span class="slider round"></span>
-                        </label>
-                    </h6>
-                    <div class="card-body shipping_address_form">
-                        <label for="email" class="mt-2  fw-normal" style="font-size: 14px;">Number</label>
-                        <div class="input-field">
-                            <input type="text" name="number" id="number" />
-                        </div>
-                        <label for="City" class="mt-2  fw-normal" style="font-size: 14px;">City</label>
-                        <div class="input-field">
-                            <input type="text" name="city" id="city" />
-                        </div>
-                        <label for="email" class="mt-2  fw-normal" style="font-size: 14px;">State</label>
-                        <div class="input-field">
-                            <input type="text" name="state" id="state" />
-                        </div>
-                        <br />
-                        <label for="street" class="mt-2  fw-normal" style="font-size: 14px;">Street</label>
-                        <div class="input-field">
-                            <input type="text" name="street" id="street" />
-                        </div>
-                        <label for="City" class="mt-2  fw-normal" style="font-size: 14px;">Postal Code</label>
-                        <div class="input-field">
-                            <input type="text" name="postal_code" id="postal_code" />
-                        </div>
-                        <label for="email" class="mt-2  fw-normal" style="font-size: 14px;">Country</label>
-                        <div class="input-field">
-                            <input type="text" name="country" id="country" />
+                <div class="col-md-6 mb-4">
+                    <div class="card mt-3 h-100 mt-md-0 animate__animated" id="fill_address_info">
+                        <h6 class="card-header d-flex align-items-center justify-content-between py-4">
+                            Billing address
+                        </h6>
+                        <div class="card-body">
+                            <label for="email" class="mt-2  fw-normal" style="font-size: 14px;">Number</label>
+                            <div class="input-field">
+                                <input type="text" name="number" id="number"  onkeyup="validate_field(this)" />
+                            </div>
+                            <label for="City" class="mt-2  fw-normal" style="font-size: 14px;">City</label>
+                            <div class="input-field">
+                                <input type="text" name="city" id="city"  onkeyup="validate_field(this)" />
+                            </div>
+                            <label for="email" class="mt-2  fw-normal" style="font-size: 14px;">State</label>
+                            <div class="input-field">
+                                <input type="text" name="state" id="state"  onkeyup="validate_field(this)" />
+                            </div>
+                            <br />
+                            <label for="street" class="mt-2  fw-normal" style="font-size: 14px;">Street</label>
+                            <div class="input-field">
+                                <input type="text" name="street" id="street"  onkeyup="validate_field(this)" />
+                            </div>
+                            <label for="City" class="mt-2  fw-normal" style="font-size: 14px;">Postal Code</label>
+                            <div class="input-field">
+                                <input type="text" name="postal_code" id="postal_code"  onkeyup="validate_field(this)" />
+                            </div>
+                            <label for="email" class="mt-2  fw-normal" style="font-size: 14px;">Country</label>
+                            <div class="input-field">
+                                <input type="text" name="country" id="country"  onkeyup="validate_field(this)" />
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card mt-4 h-100 mt-md-0 animate__animated" id="fill_shipping_info">
+                        <h6 class="card-header d-flex align-items-center justify-content-between py-4">
+                            Shipping Address
+                            <label class="switch">
+                                <input type="checkbox" id="toggle_shipping_address">
+                                <span class="slider round"></span>
+                            </label>
+                        </h6>
+                        <div class="card-body shipping_address_form">
+                            <label for="email" class="mt-2  fw-normal" style="font-size: 14px;">Number</label>
+                            <div class="input-field">
+                                <input type="text" name="shipping_number" id="shipping_number" />
+                            </div>
+                            <label for="City" class="mt-2  fw-normal" style="font-size: 14px;">City</label>
+                            <div class="input-field">
+                                <input type="text" name="shipping_city" id="shipping_city" />
+                            </div>
+                            <label for="email" class="mt-2  fw-normal" style="font-size: 14px;">State</label>
+                            <div class="input-field">
+                                <input type="text" name="shipping_state" id="shipping_state" />
+                            </div>
+                            <br />
+                            <label for="street" class="mt-2  fw-normal" style="font-size: 14px;">Street</label>
+                            <div class="input-field">
+                                <input type="text" name="shipping_street" id="shipping_street" />
+                            </div>
+                            <label for="City" class="mt-2  fw-normal" style="font-size: 14px;">Postal Code</label>
+                            <div class="input-field">
+                                <input type="text" name="shipping_postal_code" id="shipping_postal_code" />
+                            </div>
+                            <label for="email" class="mt-2  fw-normal" style="font-size: 14px;">Country</label>
+                            <div class="input-field">
+                                <input type="text" name="shipping_country" id="shipping_country" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-field mt-3 bg-transparent border-0">
+                        <input type="button" onclick="insert_details()" value="Login" class="button py-2">
+                    </div>
+                </div>    
             </div>
-        </div>
+        </form>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
